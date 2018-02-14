@@ -1,0 +1,52 @@
+<container>
+<div class = "row">
+    <div class = "col-md-12 cool-font header">
+        <h1>Burger Time!</h1>
+    </div>
+</div>
+
+<div class = "row">
+    <div class = "col-md-3"></div>
+    <div class = "col-md-3 cool-font burgerNew">
+        <h3 class = "burgerHeader">Burgers to Eat!</h3>
+        <ul>
+        {{#each burgers}}
+            {{#unless this.devoured}}
+            <li class = "border1">
+                {{this.burger_name}}
+                <form action= "/update" method="POST">
+                <button class= "btn-primary" type="submit">Devour?</button>
+                </form>
+            </li>
+            {{/unless}}
+         {{/each}}
+        </ul>
+    </div>
+
+    <div class = "col-md-3 cool-font burgerEaten">
+        <h3 class = "burgerHeader">Burgers Eaten!</h3>
+        <ul>
+        {{#each burgers}}
+            {{#if devoured}}
+            {{/if}}
+         {{/each}}
+        </ul>
+    </div>
+    <div class = "col-md-3"></div>
+</div>
+
+<div class = "row">
+    <div class = "col-md-4"></div>
+    <div class = "col-md-4 form-group">
+        <form action= "/create" method="POST">
+        <textarea class = "form-control" id = "burgerForm" placeholder="Input Burger Here">
+        </textarea>
+    <button type="submit" class = "btn btn-primary burgerButton">Submit Burger</button>
+    </form>
+    </div>
+    <div class = "col-md-4"></div>
+</div>
+
+
+
+</container>
