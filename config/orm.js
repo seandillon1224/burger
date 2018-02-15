@@ -14,7 +14,7 @@ var orm = {
     },
 
     createBurger: function(tableName, value1, cb) {
-      var queryString = "INSERT INTO " + tableName + "burger_name VALUES ?";
+      var queryString = "INSERT INTO " + tableName + " (burger_name) VALUES (?)";
   
       connection.query(queryString, value1, function(err, result) {
         if (err) {
@@ -32,7 +32,7 @@ var orm = {
         if (err){
             throw(err)
         }
-        cb(result)
+        cb(res)
         
     })
     }

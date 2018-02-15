@@ -41,3 +41,12 @@
     text-shadow: 2px 2px black;
     text-decoration: underline;
 }
+
+.burgerButton{
+    margin-left: 37%;
+}
+
+.burgerForm{
+    text-align: center;
+}
+

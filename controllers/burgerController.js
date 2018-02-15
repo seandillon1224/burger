@@ -15,16 +15,17 @@ router.get('/', function(req, res){
     });
 });
 
-router.post("/create", function(req, res){
-    console.log(req.body)
-    burger.create(req.body.item, function(data){
+router.post("/create", function(req, res){  
+    // newBurger;
+    burger.create(req.body.burgerName, function(data){    
         res.redirect('/');
-    })
+    });
 });
 
-router.post('/update', function(req, res){
-    burger.update(req.body.id, function(res){
-        console.log(req.body.id)
+router.post('/update/:id', function(req, res){
+    console.log(req.params.id)
+    
+    burger.update(req.params.id, function(data){
         res.redirect('/');
 
     });
