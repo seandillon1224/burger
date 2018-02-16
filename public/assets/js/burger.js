@@ -7,6 +7,6 @@ $(".burgerButton").on("click", function (event) {
         console.log(burgerObject.burgerName + "this log from javascript");
         
         $.post("/create", burgerObject, function(data){
-          
+            location.reload();          
         });
     });
